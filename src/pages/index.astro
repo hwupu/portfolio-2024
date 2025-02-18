@@ -1,5 +1,4 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -7,8 +6,130 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
-	<Welcome />
+  <div class="mx-auto lg:grid grid-cols-[1fr_2fr] gap-x-20 max-w-3xl xl:max-w-7xl prose xl:prose-xl">
+    <div>
+      <h1 class="text-stone-500"><span class="sr-only">Curriculum vitae of </span><span>Henry</span></h1>
+      <p class="italic font-serif">
+        <span class="whitespace-nowrap">Front-end Developer</span> with expertise in <span class="whitespace-nowrap"
+          >Graphic and Industrial Design</span
+        >
+      </p>
+      <ul class="not-prose flex xl:flex-col gap-x-10 gap-y-1">
+        {
+          [
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/puhsuanwu' },
+            { label: 'GitHub', href: 'https://github.com/hwupu' },
+            { label: 'Behance', href: 'https://www.behance.net/phwu' },
+          ].map((i) => (
+            <li class="">
+              <a href={i.href} target="_blank" rel="noopener noreferrer">
+                <span class="text-stone-500">{i.label}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div>
+      <div>
+        <h2 class="text-stone-500">Profile</h2>
+        <p>
+          A well-rounded developer and mentor with 5+ years of experiences, skilled in delivering impactful results
+          through technical expertise and strategic planning.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-stone-500">Experience</h2>
+        <ul>
+          <li>
+            <div class="flex justify-between">
+              <div>
+                <h3><span class="sr-only">Title: </span>Senior FrontEnd Engineer</h3>
+                <span class="block"><span class="sr-only">Company: </span>Lexionlu Design Firm</span>
+              </div>
+              <div>
+                <span class="block"><span class="sr-only">Year: </span>2021 - Present</span>
+                <span class="block"><span class="sr-only">Location: </span>Taipei, Taiwan</span>
+              </div>
+            </div>
+            <ul>
+              <li>
+                Developed WCAG-compliant web-app for a major airline, and successfully served over 6+ million users by
+                implementing ARIA attributes, semantic HTML, keyboard navigation, and conducting automated and manual
+                accessibility testing.
+              </li>
+              <li>
+                Engineered a modern UI component library for a major bank's web-view mobile app, streamlining
+                development and improving maintainability by leveraging a headless library and Storybook in
+                collaboration with design and native teams.
+              </li>
+              <li>
+                Established an efficient DevOps process for website development, achieving a 90% reduction in deployment
+                time by automating the deployment to Ubuntu with Docker and GitHub Actions, and utilizing Traefik as a
+                reverse proxy for optimized traffic management.
+              </li>
+              <li>
+                Addressed vulnerability concerns for Wagtail CMS by implementing nonce-based CSP configurations and
+                establishing secure coding practices across all projects.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div class="flex justify-between">
+              <div>
+                <h3><span class="sr-only">Title: </span>Deputy General Manager</h3>
+                <span class="block"><span class="sr-only">Company: </span>Siam P&W Technic</span>
+              </div>
+              <div>
+                <span class="block"><span class="sr-only">Year: </span>2017 - 2021</span>
+                <span class="block"><span class="sr-only">Location: </span>Samutprakan, Thailand</span>
+              </div>
+            </div>
+            <ul>
+              <li>
+                Reduced 60% of IT operational cost by insourcing projects and by introducing best practices to cloud
+                solutions, such as AWS, Azure AD, Exchange Online, or Cloudflare proxy, etc.
+              </li>
+              <li>
+                Expanded market and increased revenue by 30%, by establishing a team for digital UV printing process.
+              </li>
+              <li>
+                Gained 10% more profit by implementing ISO 9001 and 5S quality control systems to standardize pricing
+                models and to reduce quality loss.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-stone-500">Education</h2>
+        <ul>
+          <li>
+            <div class="flex justify-between">
+              <div>
+                <h3><span class="sr-only">Institution: </span>National Chao Tung University</h3>
+                <span class="block"><span class="sr-only">Degree: </span>Bachelor of Computer Science</span>
+              </div>
+              <div>
+                <span class="block"><span class="sr-only">Year: </span>2012 - 2016</span>
+                <span class="block">GPA 3.51</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="flex justify-between">
+              <div>
+                <h3><span class="sr-only">Institution: </span>Thai-Chinese International School</h3>
+                <span class="block">Accredited by WASC; AP Curriculum</span>
+              </div>
+              <div>
+                <span class="block"><span class="sr-only">Year: </span>2008 - 2012</span>
+                <span class="block">GPA 3.56</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </Layout>
