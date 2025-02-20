@@ -1,1 +1,12 @@
-/* Content-Security-Policy: default-src 'self';
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; frame-src 'self';
+
+/_astro/*
+  Access-Control-Allow-Origin: phwu.dev
+  X-Robots-Tag: nosnippet
+
+https://phwu.dev/*
+  X-Robots-Tag: noindex
