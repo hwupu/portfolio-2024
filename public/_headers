@@ -1,12 +1,19 @@
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
+  X-Robots-Tag: noindex
   Referrer-Policy: no-referrer
-  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; frame-src 'self';
+  Permissions-Policy: document-domain=()
+  Content-Security-Policy: default-src 'self'; font-src 'self' https://fonts.gstatic.com; frame-ancestors 'none';
 
 /_astro/*
-  Access-Control-Allow-Origin: phwu.dev
+  Access-Control-Allow-Origin: https://*.phwu.dev
   X-Robots-Tag: nosnippet
 
-https://phwu.dev/*
+https://portfolio-2024-8ep.pages.dev/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
   X-Robots-Tag: noindex
+  Referrer-Policy: no-referrer
+  Permissions-Policy: document-domain=()
+  Content-Security-Policy: default-src 'self'; font-src 'self' https://fonts.gstatic.com; frame-ancestors 'none';
