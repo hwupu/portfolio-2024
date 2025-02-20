@@ -3,7 +3,7 @@
   X-Content-Type-Options: nosniff
   X-Robots-Tag: noindex
   Referrer-Policy: no-referrer
-  Content-Security-Policy: default-src 'self'; frame-ancestors 'none'; require-trusted-types-for 'script';
+  Content-Security-Policy: script-src 'strict-dynamic' 'self'; frame-ancestors 'none'; require-trusted-types-for 'script'; default-src 'self';
 /_astro/*
   Access-Control-Allow-Origin: https://*.phwu.dev
   X-Robots-Tag: nosnippet
@@ -13,4 +13,4 @@ https://portfolio-2024-8ep.pages.dev/*
   X-Content-Type-Options: nosniff
   X-Robots-Tag: noindex
   Referrer-Policy: no-referrer
-  Content-Security-Policy: default-src 'self'; frame-ancestors 'none'; require-trusted-types-for 'script';
+  Content-Security-Policy: script-src 'strict-dynamic' 'self'; frame-ancestors 'none'; require-trusted-types-for 'script'; default-src 'self';
