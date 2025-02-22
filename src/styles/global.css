@@ -1,2 +1,6 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "@tailwindcss/typography";
+
+a {
+  @apply underline underline-offset-4 decoration-dotted decoration-stone-600 dark:decoration-stone-400 hover:text-sky-700 dark:hover:text-sky-500 focus-visible:text-sky-700 dark:focus-visible:text-sky-500 hover:decoration-current focus-visible:decoration-current transition-colors;
+}

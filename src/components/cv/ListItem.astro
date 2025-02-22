@@ -1,0 +1,106 @@
+---
+interface Props {
+  title?: string;
+  company?: string;
+  companyUrl?: string;
+  location?: string;
+  institution?: string;
+  degree?: string;
+  from?: string;
+  to?: string;
+  as?: 'li' | 'div';
+}
+const props: Props = Astro.props;
+
+const Element = props.as ?? 'li';
+const CLASS_TEXT_SIZE_SECONDARY = 'text-base/[2] sm:text-lg/[1.8]';
+const CLASS_TEXT_COLOR_SECONDARY = 'text-stone-600 dark:text-stone-400';
+const CLASS_SUBTITLE = [
+  'block xl:text-lg/[1.8] xl:text-stone-600 xl:dark:text-stone-400',
+  '@max-lg:text-base/[2] @xl:text-lg/[1.8]',
+  '@max-lg:text-stone-950 @max-lg:dark:text-stone-100',
+  '@xl:text-stone-600 @xl:dark:text-stone-400',
+];
+const CLASS_SUBTITLE2 = ['block', CLASS_TEXT_COLOR_SECONDARY, CLASS_TEXT_SIZE_SECONDARY];
+---
+
+<Element class="@container">
+  <div class="block xl:flex @max-lg:block @xl:flex justify-between">
+    <div>
+      {
+        props.title && (
+          <h3>
+            <span class="sr-only">Title: </span>
+            {props.title}
+          </h3>
+        )
+      }
+      {
+        props.institution && (
+          <h3>
+            <span class="sr-only">Institution: </span>
+            {props.institution}
+          </h3>
+        )
+      }
+      {
+        props.degree && (
+          <span class:list={CLASS_SUBTITLE}>
+            <span class="sr-only">Degree: </span>
+            {props.degree}
+          </span>
+        )
+      }
+      {
+        props.company && (
+          <span class:list={CLASS_SUBTITLE}>
+            <span class="sr-only">Company: </span>
+            <a href={props.companyUrl} target="_blank" rel="noopener noreferrer">
+              {props.company}
+            </a>
+          </span>
+        )
+      }
+      {
+        Astro.slots.has('subtitle') && (
+          <span class:list={CLASS_SUBTITLE2}>
+            <slot name="subtitle" />
+          </span>
+        )
+      }
+    </div>
+    <div class="flex gap-4 xl:block xl:text-right @max-lg:text-left @max-lg:flex @xl:text-right @xl:block">
+      {
+        props.from && props.to && (
+          <span
+            class:list={[
+              ...CLASS_SUBTITLE2,
+              '@max-lg:text-base/[2] @xl:text-lg/[1.8]',
+              '@max-lg:text-stone-600 @max-lg:dark:text-stone-400',
+              '@xl:text-stone-950 @xl:dark:text-stone-100',
+              'xl:text-xl/[1.6] xl:text-stone-950 xl:dark:text-stone-100',
+            ]}
+          >
+            <span class="sr-only">Year: </span>
+            {props.from} - {props.to}
+          </span>
+        )
+      }
+      {
+        props.location && (
+          <span class:list={CLASS_SUBTITLE2}>
+            <span class="sr-only">Location: </span>
+            {props.location}
+          </span>
+        )
+      }
+      {
+        Astro.slots.has('extra') && (
+          <span class:list={CLASS_SUBTITLE2}>
+            <slot name="extra" />
+          </span>
+        )
+      }
+    </div>
+  </div>
+</Element>
