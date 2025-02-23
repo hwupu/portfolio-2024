@@ -13,19 +13,21 @@ interface Props {
   from?: string;
   to?: string;
   as?: 'li' | 'div';
+  id: string;
 }
 const props: Props = Astro.props;
 
 const Element = props.as ?? 'li';
-const CLASS_TEXT_SIZE_SECONDARY = 'text-base/[2] sm:text-lg/[1.8]';
-const CLASS_TEXT_COLOR_SECONDARY = 'text-stone-600 dark:text-stone-400';
+const ElementInner = Element === 'li' ? 'section' : 'div';
+
+import { CLASS_TEXT_SIZE_SECONDARY, CLASS_TEXT_COLOR_SECONDARY } from '@/utils/tailwindHelper';
 const CLASS_SUBTITLE = [
-  'block xl:text-lg/[1.8] xl:text-stone-600 xl:dark:text-stone-400',
+  'xl:text-lg/[1.8] xl:text-stone-600 xl:dark:text-stone-400',
   '@max-lg:text-base/[2] @xl:text-lg/[1.8]',
   '@max-lg:text-stone-950 @max-lg:dark:text-stone-100',
   '@xl:text-stone-600 @xl:dark:text-stone-400',
 ];
-const CLASS_SUBTITLE2 = ['block', CLASS_TEXT_COLOR_SECONDARY, CLASS_TEXT_SIZE_SECONDARY];
+const CLASS_SUBTITLE2 = [CLASS_TEXT_COLOR_SECONDARY, CLASS_TEXT_SIZE_SECONDARY];
 
 const REGEX_YEAR_MONTH = /\d{4}-\d{2}/;
 const toMonthYear = (date: string) => {
@@ -35,55 +37,55 @@ const toMonthYear = (date: string) => {
 ---
 
 <Element class="@container">
-  <div class="block xl:flex @max-lg:block @xl:flex justify-between">
+  <ElementInner
+    aria-labelled={ElementInner === 'section' ? props.id : undefined}
+    class="block xl:flex @max-lg:block @xl:flex justify-between"
+  >
     <div>
       {
         props.title && (
-          <h3>
-            <span class="sr-only">Title: </span>
-            {props.title}
+          <h3 aria-label={`Title: ${props.title}`}>
+            <span id={props.id}>{props.title}</span>
           </h3>
         )
       }
       {
         props.institution && (
-          <h3>
-            <span class="sr-only">Institution: </span>
-            {props.institution}
+          <h3 aria-label={`Institution: ${props.institution}`}>
+            <span id={props.id}>{props.institution}</span>
           </h3>
         )
       }
       {
         props.degree && (
-          <span class:list={CLASS_SUBTITLE}>
-            <span class="sr-only">Degree: </span>
+          <p aria-label="Degree" class:list={CLASS_SUBTITLE}>
             {props.degree}
-          </span>
+          </p>
         )
       }
       {
         props.company && (
-          <span class:list={CLASS_SUBTITLE}>
-            <span class="sr-only">Company: </span>
+          <p aria-label="Company" class:list={CLASS_SUBTITLE}>
             <a href={props.companyUrl} class="inline-flex items-center gap-2" target="_blank" rel="noopener noreferrer">
               {props.company}
               <IconLink class="icon" />
             </a>
-          </span>
+          </p>
         )
       }
       {
         Astro.slots.has('subtitle') && (
-          <span class:list={CLASS_SUBTITLE2}>
+          <p class:list={CLASS_SUBTITLE2}>
             <slot name="subtitle" />
-          </span>
+          </p>
         )
       }
     </div>
     <div class="flex gap-8 xl:block xl:text-right @max-lg:text-left @max-lg:flex @xl:text-right @xl:block">
       {
         props.from && props.to && (
-          <span
+          <p
+            aria-label="Year"
             class:list={[
               ...CLASS_SUBTITLE2,
               '@max-lg:text-base/[2] @xl:text-lg/[1.8]',
@@ -93,33 +95,39 @@ const toMonthYear = (date: string) => {
             ]}
           >
             <IconCalendar class:list={['icon', CLASS_TEXT_COLOR_SECONDARY]} />
-            <span class="sr-only">Year: </span>
             {props.from.match(REGEX_YEAR_MONTH) ? (
-              <time datetime={props.from}>{toMonthYear(props.from)}</time>
+              <time aria-label="From" datetime={props.from}>
+                {toMonthYear(props.from)}
+              </time>
             ) : (
               props.from
             )}
-            {' - '}
-            {props.to.match(REGEX_YEAR_MONTH) ? <time datetime={props.to}>{toMonthYear(props.to)}</time> : props.to}
-          </span>
+            <span aria-hidden="true"> - </span>
+            {props.to.match(REGEX_YEAR_MONTH) ? (
+              <time aria-label="To" datetime={props.to}>
+                {toMonthYear(props.to)}
+              </time>
+            ) : (
+              props.to
+            )}
+          </p>
         )
       }
       {
         props.location && (
-          <span class:list={CLASS_SUBTITLE2}>
+          <p aria-label="Location" class:list={CLASS_SUBTITLE2}>
             <IconLocation class:list={['icon', CLASS_TEXT_COLOR_SECONDARY]} />
-            <span class="sr-only">Location: </span>
             {props.location}
-          </span>
+          </p>
         )
       }
       {
         Astro.slots.has('extra') && (
-          <span class:list={CLASS_SUBTITLE2}>
+          <p class:list={CLASS_SUBTITLE2}>
             <slot name="extra" />
-          </span>
+          </p>
         )
       }
     </div>
-  </div>
+  </ElementInner>
 </Element>
