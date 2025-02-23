@@ -1,9 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ListItem from '../components/cv/ListItem.astro';
+import Layout from '@/layouts/Layout.astro';
+import ListItem from '@/components/cv/ListItem.astro';
 
 const CLASS_H2 = 'text-stone-500 dark:text-stone-400 text-4xl font-thin print:font-light tracking-wider';
-const CLASS_SUBITEM = 'block text-stone-500 dark:text-stone-400 text-base/[2] sm:text-lg/[1.8]';
 ---
 
 <Layout>
@@ -48,7 +47,7 @@ const CLASS_SUBITEM = 'block text-stone-500 dark:text-stone-400 text-base/[2] sm
               title="Senior Front-end Engineer"
               company="Lexionlu Design Firm"
               companyUrl="https://www.lexionlu.com"
-              from="2021"
+              from="2021-08"
               to="Present"
               location="Taipei, Taiwan"
             />
@@ -80,8 +79,8 @@ const CLASS_SUBITEM = 'block text-stone-500 dark:text-stone-400 text-base/[2] sm
               title="Deputy General Manager"
               company="Siam P&W Technic"
               companyUrl="https://siampw.com"
-              from="2017"
-              to="2021"
+              from="2017-03"
+              to="2021-05"
               location="Samutprakan, Thailand"
             />
             <ul class="list-outside list-disc ml-8 space-y-4">
@@ -98,6 +97,34 @@ const CLASS_SUBITEM = 'block text-stone-500 dark:text-stone-400 text-base/[2] sm
               </li>
             </ul>
           </li>
+          <li class="space-y-4">
+            <ListItem
+              as="div"
+              title="Intership"
+              company="Tagtoo Co., Ltd."
+              companyUrl="https://tagtoo.com"
+              from="2016-06"
+              to="2017-01"
+              location="Taipei, Taiwan"
+            />
+            <ul class="list-outside list-disc ml-8 space-y-4">
+              <li>A</li>
+            </ul>
+          </li>
+          <li class="space-y-4">
+            <ListItem
+              as="div"
+              title="Internship"
+              company="IT Service Center, NCTU"
+              companyUrl="https://it.nycu.edu.tw"
+              from="2013-02"
+              to="2013-12"
+              location="Hsinchu, Taiwan"
+            />
+            <ul class="list-outside list-disc ml-8 space-y-4">
+              <li>A</li>
+            </ul>
+          </li>
         </ul>
       </div>
       <div class="space-y-6">
@@ -106,20 +133,20 @@ const CLASS_SUBITEM = 'block text-stone-500 dark:text-stone-400 text-base/[2] sm
           <ListItem
             institution="National Chao Tung University"
             degree="Master of Industrial Design"
-            from="2016"
-            to="2017"
+            from="2016-09"
+            to="2017-01"
           >
             <Fragment slot="extra">Not graduated</Fragment>
           </ListItem>
           <ListItem
             institution="National Chao Tung University"
             degree="Bachelor of Computer Science"
-            from="2012"
-            to="2016"
+            from="2012-09"
+            to="2016-06"
           >
             <Fragment slot="extra">GPA 3.51</Fragment>
           </ListItem>
-          <ListItem institution="Thai-Chinese International School" from="2008" to="2012">
+          <ListItem institution="Thai-Chinese International School" from="08/2008" to="05/2012">
             <Fragment slot="subtitle">Accredited by WASC (AP Curriculum)</Fragment>
             <Fragment slot="extra">GPA 3.56</Fragment>
           </ListItem>
