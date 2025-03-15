@@ -6,7 +6,7 @@ export const inlineStyleHashes = /** @type {string[]} */ ([])
 
 export const extScriptHashes = /** @type {string[]} */ ([
 	'sha256-6Cu2Eu+yNEidcnUWn/h3AJr56L2dpignyF0ukxwNmKU=',
-	'sha256-twn7/Upx0Hmk0ocH0owB2JyP/V7yKXyebYIeCdGJ45Y=',
+	'sha256-zERyaD1p4NQjuYL7aSbQKk6mHJ2xfTuyBQwuojnUL7M=',
 ])
 
 export const extStyleHashes = /** @type {string[]} */ ([
@@ -35,7 +35,7 @@ export const perPageSriHashes =
 
 export const perResourceSriHashes = {
 	scripts: /** @type {Record<string,string>} */ ({
-		'/_astro/chunk-0-NWvEQKWJ.js': 'sha256-twn7/Upx0Hmk0ocH0owB2JyP/V7yKXyebYIeCdGJ45Y=',
+		'/_astro/chunk-0-zIdycpVb.js': 'sha256-zERyaD1p4NQjuYL7aSbQKk6mHJ2xfTuyBQwuojnUL7M=',
 		'/_astro/entry-0.js': 'sha256-6Cu2Eu+yNEidcnUWn/h3AJr56L2dpignyF0ukxwNmKU=',
 	}),
 	styles: /** @type {Record<string,string>} */ ({
