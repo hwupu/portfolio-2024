@@ -3,18 +3,18 @@
   X-Content-Type-Options: nosniff
   X-Robots-Tag: noindex
   Referrer-Policy: no-referrer
-  Content-Security-Policy: script-src 'strict-dynamic' 'self' https://phwu.dev; frame-ancestors 'none'; require-trusted-types-for 'script'; default-src 'self';
+  Content-Security-Policy: base-uri 'self'; default-src 'none'; img-src 'self'; font-src 'self'; script-src 'strict-dynamic' 'self' https://phwu.dev; frame-ancestors 'none'; form-action 'none'; require-trusted-types-for 'script';
 
 /_astro/*
   Access-Control-Allow-Origin: https://*.phwu.dev
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-Robots-Tag: noindex, nosnippet
-  Content-Security-Policy: none
+  Content-Security-Policy: base-uri 'self'; default-src 'none'; frame-ancestors 'none'; form-action 'none'; require-trusted-types-for 'script';
 
 https://portfolio-2024-8ep.pages.dev/*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-Robots-Tag: noindex, nosnippet
   Referrer-Policy: no-referrer
-  Content-Security-Policy: script-src 'strict-dynamic' 'self' https://portfolio-2024-8ep.pages.dev; frame-ancestors 'none'; require-trusted-types-for 'script'; default-src 'self';
+  Content-Security-Policy: base-uri 'self'; default-src 'none'; img-src 'self'; font-src 'self'; script-src 'strict-dynamic' 'self' https://portfolio-2024-8ep.pages.dev; frame-ancestors 'none'; form-action 'none'; require-trusted-types-for 'script';

@@ -6,11 +6,11 @@ export const inlineStyleHashes = /** @type {string[]} */ ([])
 
 export const extScriptHashes = /** @type {string[]} */ ([
 	'sha256-6Cu2Eu+yNEidcnUWn/h3AJr56L2dpignyF0ukxwNmKU=',
-	'sha256-aS+rM02LCeSqouMZ4nUVR4zbSDV1mDLY8sv7ieizhYw=',
+	'sha256-twn7/Upx0Hmk0ocH0owB2JyP/V7yKXyebYIeCdGJ45Y=',
 ])
 
 export const extStyleHashes = /** @type {string[]} */ ([
-	'sha256-2lQJ8GtokYcVrRr//YFRjSuJWO2p8R3kAr21aX5mFIY=',
+	'sha256-1du4ZR/+tpdNELnPJN0J95DZXAJnxODMfCDNNy2u0Yc=',
 ])
 
 export const perPageSriHashes =
@@ -18,7 +18,7 @@ export const perPageSriHashes =
 		'en/index.html': {
 			scripts: [],
 			styles: [
-				'sha256-2lQJ8GtokYcVrRr//YFRjSuJWO2p8R3kAr21aX5mFIY=',
+				'sha256-1du4ZR/+tpdNELnPJN0J95DZXAJnxODMfCDNNy2u0Yc=',
 			],
 		},
 		'index.html': {
@@ -28,17 +28,17 @@ export const perPageSriHashes =
 		'zh/index.html': {
 			scripts: [],
 			styles: [
-				'sha256-2lQJ8GtokYcVrRr//YFRjSuJWO2p8R3kAr21aX5mFIY=',
+				'sha256-1du4ZR/+tpdNELnPJN0J95DZXAJnxODMfCDNNy2u0Yc=',
 			],
 		}}
 )
 
 export const perResourceSriHashes = {
 	scripts: /** @type {Record<string,string>} */ ({
-		'/_astro/chunk-0-ggnUCgVB.js': 'sha256-aS+rM02LCeSqouMZ4nUVR4zbSDV1mDLY8sv7ieizhYw=',
+		'/_astro/chunk-0-NWvEQKWJ.js': 'sha256-twn7/Upx0Hmk0ocH0owB2JyP/V7yKXyebYIeCdGJ45Y=',
 		'/_astro/entry-0.js': 'sha256-6Cu2Eu+yNEidcnUWn/h3AJr56L2dpignyF0ukxwNmKU=',
 	}),
 	styles: /** @type {Record<string,string>} */ ({
-		'/_astro/asset-1-CYfuRF-6.css': 'sha256-2lQJ8GtokYcVrRr//YFRjSuJWO2p8R3kAr21aX5mFIY=',
+		'/_astro/asset-1-Cf2XoHoM.css': 'sha256-1du4ZR/+tpdNELnPJN0J95DZXAJnxODMfCDNNy2u0Yc=',
 	}),
 }
