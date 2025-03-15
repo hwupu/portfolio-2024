@@ -1,6 +1,5 @@
 ---
 import "@/styles/global.css";
-import Clarity from "@/components/Clarity.astro";
 import { getLangFromUrl } from "@/i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
@@ -13,7 +12,7 @@ const lang = getLangFromUrl(Astro.url);
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <title>Good Day</title>
-        <Clarity />
+        <script is:inline src="/js/clarity.js"></script>
     </head>
     <body
         class="bg-stone-100 text-lg/[1.7] font-light tracking-wide text-stone-950 sm:text-xl/[1.6] dark:bg-stone-900 dark:text-stone-100 print:font-normal"
