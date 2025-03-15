@@ -3,7 +3,7 @@
   X-Content-Type-Options: nosniff
   X-Robots-Tag: noindex
   Referrer-Policy: no-referrer
-  Content-Security-Policy: base-uri 'self'; default-src 'none'; img-src 'self' https://*.clarity.ms/c.gif; connect-src 'self' https://*.clarity.ms/collect; font-src 'self'; style-src 'self'; script-src 'strict-dynamic' 'self' 'nonce-BCbos2qQ' https://*.clarity.ms https://c.bing.com; frame-ancestors 'none'; form-action 'none';
+  Content-Security-Policy: base-uri 'self'; default-src 'none'; img-src 'self' data: https://*.clarity.ms/c.gif; connect-src 'self' https://*.clarity.ms/collect; font-src 'self' data:; style-src 'sha256-1du4ZR/+tpdNELnPJN0J95DZXAJnxODMfCDNNy2u0Yc=' 'self'; script-src 'sha256-QZVfhxkq6o2yxnzlm6/l6qOrWWOjcGX5sQcc51NVDYg=' 'sha256-2B/678Jwfn5ubTA3dBjfyAhP3qLrpxErZ1kFFBpzpUo=' 'sha256-6Cu2Eu+yNEidcnUWn/h3AJr56L2dpignyF0ukxwNmKU=' 'strict-dynamic' 'self' https://*.clarity.ms https://c.bing.com 'unsafe-inline'; frame-ancestors 'none'; form-action 'none';
 
 /_astro/*
   Access-Control-Allow-Origin: https://*.phwu.dev
