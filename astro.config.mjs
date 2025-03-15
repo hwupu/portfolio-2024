@@ -2,6 +2,8 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
+import react from '@astrojs/react';
+
 let assetsCount = 0;
 let entryCount = 0;
 let iconCount = 0;
@@ -14,9 +16,11 @@ export default defineConfig({
       mode: 'sprite',
     },
   },
+
   devToolbar: {
     enabled: false,
   },
+
   vite: {
     plugins: [tailwindcss()],
     build: {
@@ -51,4 +55,6 @@ export default defineConfig({
       },
     },
   },
+
+  integrations: [react()],
 });

@@ -1,6 +1,5 @@
 {
-	"printWidth": 120,
-	"tabWidth": 2,
-	"useTabs": false,
-	"singleQuote": true
+  "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+  "tailwindStylesheet": "./src/styles/global.css",
+  "tailwindFunctions": ["clsx", "cva"]
 }
