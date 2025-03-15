@@ -3,7 +3,7 @@
   X-Content-Type-Options: nosniff
   X-Robots-Tag: noindex
   Referrer-Policy: no-referrer
-  Content-Security-Policy: base-uri 'self'; default-src 'none'; img-src 'self'; font-src 'self'; style-src 'self'; script-src 'strict-dynamic' 'self' https://phwu.dev https://www.clarity.ms, https://c.bing.com https:/[a-z].clarity.ms; frame-ancestors 'none'; form-action 'none'; require-trusted-types-for 'script';
+  Content-Security-Policy: base-uri 'self'; default-src 'none'; img-src 'self'; font-src 'self'; style-src 'self'; script-src 'strict-dynamic' 'self' https://phwu.dev https://www.clarity.ms https://c.bing.com https:/[a-z].clarity.ms; frame-ancestors 'none'; form-action 'none'; require-trusted-types-for 'script';
 
 /_astro/*
   Access-Control-Allow-Origin: https://*.phwu.dev
@@ -17,4 +17,4 @@ https://portfolio-2024-8ep.pages.dev/*
   X-Content-Type-Options: nosniff
   X-Robots-Tag: noindex, nosnippet
   Referrer-Policy: no-referrer
-  Content-Security-Policy: base-uri 'self'; default-src 'none'; img-src 'self'; font-src 'self'; style-src 'self'; script-src 'strict-dynamic' 'self' https://portfolio-2024-8ep.pages.dev https://www.clarity.ms, https://c.bing.com https:/[a-z].clarity.ms; frame-ancestors 'none'; form-action 'none'; require-trusted-types-for 'script';
+  Content-Security-Policy: base-uri 'self'; default-src 'none'; img-src 'self'; font-src 'self'; style-src 'self'; script-src 'strict-dynamic' 'self' https://portfolio-2024-8ep.pages.dev https://www.clarity.ms https://c.bing.com https:/[a-z].clarity.ms; frame-ancestors 'none'; form-action 'none'; require-trusted-types-for 'script';

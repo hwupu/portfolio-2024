@@ -2,6 +2,7 @@
 
 export const inlineScriptHashes = /** @type {string[]} */ ([
 	'sha256-JEFsP7rVHf95KYKkFWCnDDsGS1bEya2F9DGDfK/wVlo=',
+	'sha256-QZVfhxkq6o2yxnzlm6/l6qOrWWOjcGX5sQcc51NVDYg=',
 ])
 
 export const inlineStyleHashes = /** @type {string[]} */ ([
@@ -12,7 +13,7 @@ export const extScriptHashes = /** @type {string[]} */ ([
 	'sha256-3v+IeJcJw9MBU/QXVpxEg8AWE7NdBeUlUO9mBpW0NLg=',
 	'sha256-JIl5ldn9GNyefPQPRkpbIrDi8ogcJBz1l5dUHO0f0JQ=',
 	'sha256-JmqZrgnMkvwnZWsQpVZ2p5qE03s7MzDP1/pNuSfwK/M=',
-	'sha256-K9VkCxexyYl7j7+O/zdm9iIbHxSZkRrgLKVL9ExhPu8=',
+	'sha256-p1ya2gHGY5dzUr6iLfSIuN9YbzfATtYh+0UICtPHAQQ=',
 ])
 
 export const extStyleHashes = /** @type {string[]} */ ([
@@ -24,6 +25,7 @@ export const perPageSriHashes =
 		'en/index.html': {
 			scripts: [
 				'sha256-JEFsP7rVHf95KYKkFWCnDDsGS1bEya2F9DGDfK/wVlo=',
+				'sha256-QZVfhxkq6o2yxnzlm6/l6qOrWWOjcGX5sQcc51NVDYg=',
 			],
 			styles: [
 				'sha256-1du4ZR/+tpdNELnPJN0J95DZXAJnxODMfCDNNy2u0Yc=',
@@ -35,7 +37,9 @@ export const perPageSriHashes =
 			styles: [],
 		},
 		'zh/index.html': {
-			scripts: [],
+			scripts: [
+				'sha256-QZVfhxkq6o2yxnzlm6/l6qOrWWOjcGX5sQcc51NVDYg=',
+			],
 			styles: [
 				'sha256-1du4ZR/+tpdNELnPJN0J95DZXAJnxODMfCDNNy2u0Yc=',
 			],
@@ -44,7 +48,7 @@ export const perPageSriHashes =
 
 export const perResourceSriHashes = {
 	scripts: /** @type {Record<string,string>} */ ({
-		'/_astro/chunk-0-BSEWOLHi.js': 'sha256-K9VkCxexyYl7j7+O/zdm9iIbHxSZkRrgLKVL9ExhPu8=',
+		'/_astro/chunk-0-C_dGQGzi.js': 'sha256-p1ya2gHGY5dzUr6iLfSIuN9YbzfATtYh+0UICtPHAQQ=',
 		'/_astro/chunk-0-D0-ruB6T.js': 'sha256-JmqZrgnMkvwnZWsQpVZ2p5qE03s7MzDP1/pNuSfwK/M=',
 		'/_astro/entry-0.js': 'sha256-JIl5ldn9GNyefPQPRkpbIrDi8ogcJBz1l5dUHO0f0JQ=',
 		'/_astro/entry-1.js': 'sha256-3v+IeJcJw9MBU/QXVpxEg8AWE7NdBeUlUO9mBpW0NLg=',
