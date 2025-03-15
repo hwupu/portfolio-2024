@@ -1,0 +1,12 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Logo from "@/assets/icons/logo.svg";
+
+import { cn, CLASS_TEXT_COLOR_SECONDARY } from "@/utils/tailwindHelper";
+---
+
+<Layout>
+    <Logo
+        class={cn("mx-auto size-32 sm:size-40", CLASS_TEXT_COLOR_SECONDARY)}
+    />
+</Layout>

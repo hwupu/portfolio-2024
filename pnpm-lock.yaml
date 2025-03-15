@@ -48,6 +48,9 @@ importers:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@4.0.14)
     devDependencies:
+      '@kindspells/astro-shield':
+        specifier: ^1.7.1
+        version: 1.7.1(astro@5.5.2(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.35.0)(typescript@5.7.3))
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@4.0.14)
@@ -444,6 +447,12 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
+
+  '@kindspells/astro-shield@1.7.1':
+    resolution: {integrity: sha512-8M6rbXNp1v7CbwIjDXJzlgnPuYHmqTLGAiiMK738AhYE191uWGi6mzEhQEW9U4agDzi6Cq6+WFjJ/ZavYDz4pg==}
+    engines: {node: '>= 18.0.0'}
+    peerDependencies:
+      astro: ^4.0.0
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
@@ -2220,6 +2229,10 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  '@kindspells/astro-shield@1.7.1(astro@5.5.2(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.35.0)(typescript@5.7.3))':
+    dependencies:
+      astro: 5.5.2(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.35.0)(typescript@5.7.3)
 
   '@oslojs/encoding@1.1.0': {}
 

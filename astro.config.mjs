@@ -1,8 +1,13 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
 
-import react from '@astrojs/react';
+import { defineConfig } from "astro/config";
+import { shield } from "@kindspells/astro-shield";
+import tailwindcss from "@tailwindcss/vite";
+import react from "@astrojs/react";
+
+import { resolve } from "node:path";
+const rootDir = new URL(".", import.meta.url).pathname;
+const modulePath = resolve(rootDir, "src", "generated", "sriHashes.mjs");
 
 let assetsCount = 0;
 let entryCount = 0;
@@ -13,12 +18,20 @@ const fileNameMap = new Map();
 export default defineConfig({
   experimental: {
     svg: {
-      mode: 'sprite',
+      mode: "sprite",
     },
   },
 
   devToolbar: {
     enabled: false,
+  },
+
+  i18n: {
+    locales: [
+      { path: "en", codes: ["en", "en-US"] },
+      { path: "zh", codes: ["zh", "zh-Hant", "zh-Hant-TW"] },
+    ],
+    defaultLocale: "en",
   },
 
   vite: {
@@ -28,14 +41,14 @@ export default defineConfig({
         output: {
           assetFileNames: (assetInfo) => {
             const name = assetInfo.names[0];
-            const isSVG = name.endsWith('.svg');
+            const isSVG = name.endsWith(".svg");
             let index = fileNameMap.get(name);
             if (!index) {
               fileNameMap.set(name, isSVG ? iconCount : assetsCount);
               index = isSVG ? iconCount : assetsCount;
               isSVG ? (iconCount += 1) : (assetsCount += 1);
             }
-            return `_astro/${isSVG ? 'icon' : 'asset'}-${index}-[hash][extname]`;
+            return `_astro/${isSVG ? "icon" : "asset"}-${index}-[hash][extname]`;
           },
           entryFileNames: (chunkInfo) => {
             const name = chunkInfo.name;
@@ -47,14 +60,22 @@ export default defineConfig({
             }
             return `_astro/entry-${index}.js`;
           },
-          chunkFileNames: '_astro/[name]-[hash].js',
+          chunkFileNames: "_astro/[name]-[hash].js",
           manualChunks: (id) => {
-            return 'chunk-0';
+            return "chunk-0";
           },
         },
       },
     },
   },
 
-  integrations: [react()],
+  integrations: [
+    react(),
+    shield({
+      sri: {
+        enableMiddleware: true,
+        hashesModule: modulePath,
+      },
+    }),
+  ],
 });
