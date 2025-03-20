@@ -5,7 +5,6 @@ import { shield } from "@kindspells/astro-shield";
 import tailwindcss from "@tailwindcss/vite";
 
 import { resolve } from "node:path";
-import starlight from "@astrojs/starlight";
 const rootDir = new URL(".", import.meta.url).pathname;
 const modulePath = resolve(rootDir, "src", "generated", "sriHashes.mjs");
 
@@ -16,7 +15,7 @@ const fileNameMap = new Map();
 
 // https://astro.build/config
 export default defineConfig({
-  experimental: {
+	experimental: {
     svg: {
       mode: "sprite",
     },
@@ -75,9 +74,6 @@ export default defineConfig({
         enableMiddleware: true,
         hashesModule: modulePath,
       },
-    }),
-    starlight({
-      title: "Good Day",
     }),
   ],
 });
