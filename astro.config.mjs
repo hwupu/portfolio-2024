@@ -15,7 +15,7 @@ const fileNameMap = new Map();
 
 // https://astro.build/config
 export default defineConfig({
-	experimental: {
+  experimental: {
     svg: {
       mode: "sprite",
     },
@@ -58,10 +58,6 @@ export default defineConfig({
               entryCount += 1;
             }
             return `_astro/entry-${index}.js`;
-          },
-          chunkFileNames: "_astro/[name]-[hash].js",
-          manualChunks: (id) => {
-            return "chunk-0";
           },
         },
       },
