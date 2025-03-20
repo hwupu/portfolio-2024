@@ -3,9 +3,9 @@
 import { defineConfig } from "astro/config";
 import { shield } from "@kindspells/astro-shield";
 import tailwindcss from "@tailwindcss/vite";
-import react from "@astrojs/react";
 
 import { resolve } from "node:path";
+import starlight from "@astrojs/starlight";
 const rootDir = new URL(".", import.meta.url).pathname;
 const modulePath = resolve(rootDir, "src", "generated", "sriHashes.mjs");
 
@@ -70,12 +70,14 @@ export default defineConfig({
   },
 
   integrations: [
-    react(),
     shield({
       sri: {
         enableMiddleware: true,
         hashesModule: modulePath,
       },
+    }),
+    starlight({
+      title: "Good Day",
     }),
   ],
 });

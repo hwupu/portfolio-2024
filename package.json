@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "pnpm run build-only && pnpm run build-only && pnpm run update-header",
+    "build": "pnpm run build-only && pnpm run update-header && pnpm run build-only",
     "preview": "astro preview",
     "astro": "astro",
     "build-only": "astro build",
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.2.1",
+    "@astrojs/starlight": "^0.32.3",
     "@radix-ui/react-slot": "^1.1.2",
     "@tailwindcss/vite": "^4.0.14",
     "@types/react": "^19.0.10",
