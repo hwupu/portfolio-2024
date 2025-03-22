@@ -11,3 +11,8 @@ export function useTranslations(lang: keyof typeof ui) {
     return ui[lang][key] || ui[defaultLang][key];
   };
 }
+
+export function getLocalizedLocale(lang: keyof typeof ui) {
+  if (lang == "en") return "en-US";
+  if (lang == "zh") return "zh-Hant";
+}

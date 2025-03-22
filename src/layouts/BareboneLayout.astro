@@ -1,0 +1,78 @@
+---
+import "@/styles/starwind.css";
+import { MetaTags } from "@codemint/astro-meta";
+
+import type { LayoutProps } from "@/layouts/layoutTypes";
+interface Props extends LayoutProps {}
+const { meta }: LayoutProps = Astro.props;
+
+import {
+  getLangFromUrl,
+  useTranslations,
+  getLocalizedLocale,
+} from "@/i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const {
+  title = "",
+  description = t("ui.layout.description"),
+  author = t("ui.layout.author"),
+  openGraph,
+  twitter,
+  ...restMetadata
+} = meta;
+
+const formattedTitle = title
+  ? `${title} | ${t("ui.layout.title")}`
+  : t("ui.layout.title");
+
+const mergedOpenGraph = Object.assign(
+  {
+    type: "website",
+    title: title !== "" ? title : t("ui.layout.title"),
+    description,
+    image: {
+      url: "https://phwu.dev/img/og/cubic-center.jpg",
+    },
+    siteName: t("ui.layout.title"),
+    url: Astro.url.href.replace("http", "https"),
+    locale: getLocalizedLocale(lang),
+  },
+  openGraph,
+);
+
+const mergedTwitter = Object.assign(
+  {
+    type: "summary",
+    site: "@hwupu",
+    title: title !== "" ? title : t("ui.layout.title"),
+  },
+  twitter,
+);
+---
+
+<!doctype html>
+<html lang={getLocalizedLocale(lang)}>
+  <head>
+    <MetaTags
+      title={formattedTitle}
+      {description}
+      {author}
+      openGraph={mergedOpenGraph}
+      twitter={mergedTwitter}
+      {...restMetadata}
+    />
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <script is:inline src="/js/clarity.min.js" defer></script>
+    <slot name="html-head" />
+  </head>
+  <body
+    class="bg-stone-100 text-lg/[1.7] font-light tracking-wide text-stone-950 sm:text-xl/[1.6] dark:bg-stone-900 dark:text-stone-100 print:font-normal"
+  >
+    <slot />
+    <slot name="html-body" />
+  </body>
+</html>

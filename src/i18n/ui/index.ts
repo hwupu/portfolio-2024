@@ -5,14 +5,13 @@ export const languages = {
 
 export const defaultLang = "en";
 
+import { uiLayout } from "./layout";
+
 export const ui = {
   en: {
-    "nav.home": "Home",
-    "nav.about": "About",
-    "nav.twitter": "Twitter",
+    ...uiLayout.en,
   },
   zh: {
-    "nav.home": "Accueil",
-    "nav.about": "À propos",
+    ...uiLayout.zh,
   },
 } as const;

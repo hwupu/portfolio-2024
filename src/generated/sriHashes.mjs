@@ -9,7 +9,7 @@ export const extScriptHashes = /** @type {string[]} */ ([
 ])
 
 export const extStyleHashes = /** @type {string[]} */ ([
-	'sha256-Wcaiwpi0zGHZ3mmgDJRXBAIzK3jcuvyGJd9AkrkHLOA=',
+	'sha256-X9t+xIAog5W5lUTcSJJxW+5gZeRsCdJISDe4K20N8hc=',
 ])
 
 export const perPageSriHashes =
@@ -19,7 +19,7 @@ export const perPageSriHashes =
 				'sha256-/l3w5o0WGsEP4/nhB0DzGkMwvCUyRTl7pXOiangbgtk=',
 			],
 			styles: [
-				'sha256-Wcaiwpi0zGHZ3mmgDJRXBAIzK3jcuvyGJd9AkrkHLOA=',
+				'sha256-X9t+xIAog5W5lUTcSJJxW+5gZeRsCdJISDe4K20N8hc=',
 			],
 		},
 		'index.html': {
@@ -31,7 +31,7 @@ export const perPageSriHashes =
 				'sha256-/l3w5o0WGsEP4/nhB0DzGkMwvCUyRTl7pXOiangbgtk=',
 			],
 			styles: [
-				'sha256-Wcaiwpi0zGHZ3mmgDJRXBAIzK3jcuvyGJd9AkrkHLOA=',
+				'sha256-X9t+xIAog5W5lUTcSJJxW+5gZeRsCdJISDe4K20N8hc=',
 			],
 		}}
 )
@@ -41,6 +41,6 @@ export const perResourceSriHashes = {
 		'/js/clarity.min.js': 'sha256-/l3w5o0WGsEP4/nhB0DzGkMwvCUyRTl7pXOiangbgtk=',
 	}),
 	styles: /** @type {Record<string,string>} */ ({
-		'/_astro/asset-1-BGuv7lRT.css': 'sha256-Wcaiwpi0zGHZ3mmgDJRXBAIzK3jcuvyGJd9AkrkHLOA=',
+		'/_astro/asset-1-B51ZwwzK.css': 'sha256-X9t+xIAog5W5lUTcSJJxW+5gZeRsCdJISDe4K20N8hc=',
 	}),
 }
