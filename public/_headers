@@ -1,16 +1,31 @@
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
-  X-Robots-Tag: noindex
   Referrer-Policy: no-referrer
   Content-Security-Policy: base-uri 'self'; default-src 'none'; img-src 'self' data: https://*.clarity.ms/c.gif https://c.bing.com/c.gif; connect-src 'self' https://*.clarity.ms/collect; font-src 'self' data:; style-src  'sha256-X9t+xIAog5W5lUTcSJJxW+5gZeRsCdJISDe4K20N8hc=' 'self'; script-src  'sha256-/l3w5o0WGsEP4/nhB0DzGkMwvCUyRTl7pXOiangbgtk=' 'strict-dynamic' 'self' https: 'unsafe-inline'; frame-ancestors 'none'; form-action 'none';
 
 /_astro/*
   Access-Control-Allow-Origin: https://*.phwu.dev
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  X-Robots-Tag: noindex, nosnippet
+  X-Robots-Tag: none
   Content-Security-Policy: base-uri 'self'; default-src 'none'; frame-ancestors 'none'; form-action 'none'; require-trusted-types-for 'script';
+
+/favicons*
+  Access-Control-Allow-Origin: *
+  X-Robots-Tag: nosnippet
+  ! Content-Security-Policy
+
+/apple-touch-icon.png
+  Access-Control-Allow-Origin: *
+  X-Robots-Tag: nosnippet
+  ! Content-Security-Policy
+
+/js/*
+  Access-Control-Allow-Origin: *
+  X-Robots-Tag: nosnippet
+
+/img/*
+  Access-Control-Allow-Origin: *
+  X-Robots-Tag: nosnippet
 
 https://portfolio-2024-8ep.pages.dev/*
   X-Frame-Options: DENY
