@@ -23,7 +23,7 @@
   Access-Control-Allow-Origin: *
   X-Robots-Tag: nosnippet
 
-/img/*
+/hotlink-ok/*
   Access-Control-Allow-Origin: *
   X-Robots-Tag: nosnippet
 
