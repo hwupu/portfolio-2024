@@ -1,5 +1,7 @@
 ---
 import Layout from "@/layouts/BareboneLayout.astro";
+import CookieModal from "@/components/base/CookieModal.astro";
+import WcagQuickJump from "@/components/base/WcagQuickJump.astro";
 
 import type { LayoutProps } from "@/layouts/layoutTypes";
 interface Props extends LayoutProps {}
@@ -10,10 +12,15 @@ const { meta }: LayoutProps = Astro.props;
   <Fragment slot="html-head">
     <slot name="html-head" />
   </Fragment>
-  <main class="px-4 py-10 sm:px-8 sm:py-20">
+
+  <CookieModal />
+  <WcagQuickJump />
+
+  <main id="wcag-main" class="px-4 py-10 sm:px-8 sm:py-20">
     <slot />
   </main>
   <footer
+    id="wcag-footer"
     class="mt-10 pb-5 sm:mt-20 sm:px-8 sm:pb-10 dark:bg-stone-950 dark:text-stone-100"
   >
     <div

@@ -1,4 +1,4 @@
-export const uiLayout = {
+export default {
   en: {
     "ui.layout.title": "pHwu",
     "ui.layout.description":

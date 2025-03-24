@@ -1,0 +1,47 @@
+---
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/starwind/dialog";
+
+import { Button } from "@/components/starwind/button";
+---
+
+<Dialog data-default-open="cookie">
+  <DialogTrigger class="sr-only">Configure Cookies</DialogTrigger>
+  <DialogContent class="sm:max-w-[450px]" animationDuration={200} noClose>
+    <DialogHeader>
+      <DialogTitle>You privacy is protected</DialogTitle>
+      <DialogDescription>
+        Your personal information are not collected. Cookies are used to enhance
+        your browsing experience, and are used to understand how visitors
+        interact with this website. These cookies help to provide information on
+        metrics such as the number of visitors, bounce rate, traffic source,
+        etc.
+      </DialogDescription>
+    </DialogHeader>
+    <DialogFooter>
+      <DialogClose asChild>
+        <Button type="button" data-accept-cookie>Okay</Button>
+      </DialogClose>
+      <DialogClose asChild>
+        <Button type="button" variant="outline">Reject</Button>
+      </DialogClose>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+
+<script is:inline>
+  document
+    .querySelector("[data-accept-cookie]")
+    ?.addEventListener("click", () => {
+      window.clarity("consent");
+      document.cookie = "consent=true";
+    });
+</script>
